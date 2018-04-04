@@ -12,6 +12,7 @@ import Register from './container/register/register.js'
 import AuthRoute from './component/authroute/authrouter.js'
 import BossInfo from './container/bossinfo/bossinfo'
 import Geniusinfo from './container/geniusinfo/geniusinfo.js';
+import Dashboard from './component/dashboard/dashboard.js'
 
 const reduxDevtools = window.devToolsExtension?window.devToolsExtension():f=>f
 
@@ -43,10 +44,8 @@ const store = createStore(reducers,compose(
         reduxDevtools
   	))
 
-function Boss(){
-	return <div>Boss</div>
-}
-
+//boss genius me msg 4个页面
+//Switch是用来判断如果找到一个下面的就不在找了,如果没有，会找下面的没有path的也会被渲染出来
 ReactDOM.render(
  (
  	<Provider store= {store}>
@@ -58,6 +57,7 @@ ReactDOM.render(
  	     <Route path="/bossinfo" component={BossInfo}></Route>
  	   	 <Route axcat path="/login" component={Login}></Route>
  	   	 <Route path="/register" component={Register}></Route>
+         <Route component={Dashboard}></Route>
          </Switch>
  	   </div>
  	   </Router>

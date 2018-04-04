@@ -2,7 +2,13 @@
 //头像模块
 import React from 'react';
 import { Grid ,List} from 'antd-mobile';
+import ProTypes from 'prop-types';
 class AvatarSelector extends React.Component{
+   //用static指定一下  这个是严格的根据传递的东西，给你然后指定什么格式
+   static propTypes = {
+  selectAvatar:ProTypes.func
+   }
+
 	constructor(props){
 		super(props)
         this.state = {}
