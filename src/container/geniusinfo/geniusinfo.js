@@ -10,14 +10,15 @@ import {update} from '../../redux/user.redux.js';
    {update}
 	)
 class Geniusinfo extends React.Component{
+  
 	constructor(props){
 		super(props);
 		this.state = {
 			   title:"",
-			   company:"",
-			   money:"",
-			   desc:"",
-			   avatar:""
+         company:"",
+         money:"",
+         desc:"",
+         avatar:""
 		}
 		this.selectAvatar = this.selectAvatar.bind(this)
 	}

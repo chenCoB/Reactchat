@@ -5,8 +5,6 @@ import AvatarSelector from "../../component/avatar-selector/avatar-selector.js"
 //这个组件是boss页面设置的头像等
 import {Redirect} from 'react-router-dom'
 import {update} from '../../redux/user.redux.js';
-import ProTypes from 'prop-types'
-
 @connect(
    state=>state.user,
    {update}

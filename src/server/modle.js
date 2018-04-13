@@ -15,7 +15,7 @@ const models = {
 	  	"pwd":{type:String,require:true},
 	  	"type":{type:String,require:true},
 	  	//头像
-	  	"acatar":{type:String,require:true},
+	  	"avatar":{type:String,require:true},
 	  	//个人简介或职位简介
 	  	"desc":{type:String},
          //职位

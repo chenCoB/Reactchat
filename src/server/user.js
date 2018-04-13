@@ -18,6 +18,7 @@ Router.post("/update",function(req,res){
      	return json.dumps({code:1})
      }
      const body = req.body;
+     console.log(body.avatar)
      //findByIdAndUpdate这个命令是先查找id，在添加数据
      User.findByIdAndUpdate(userid,body,function(err,doc){
        
@@ -72,16 +73,21 @@ Router.post("/login", function(req, res) {
 
 //清空数据库
 Router.get("/list", function(req, res) {
+  //获取参数 type=genius的参数?的后那个
+
+  //post使用body ,get是用query来获取
+  const {type} = req.query //== const type = req.query.type
   //User.remove({},function(e,d){})清空数据库
-  User.find({}, function(err, doc) {
+  //根据残敌的type的参数来查找对应的数据
+  User.find({type}, function(err, doc) {
     //User.find find是查找 查询列表
-    return res.json(doc)
+    return res.json({code:0,data:doc})
   })
 })
 
 //注册页
 Router.post("/register", function(req, res) {
-  console.log(req.body)
+
   const { user, pwd, type } = req.body;
   //查询用户名是否存在
   User.findOne({ user: user }, function(err, doc) {
